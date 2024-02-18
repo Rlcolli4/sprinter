@@ -1,0 +1,49 @@
+<mat-card>
+  <!-- Header of the Card-->
+  <mat-card-header>
+    <h1>Project Sprinter</h1>
+  </mat-card-header>
+  <!--Card Contents-->
+  <mat-card-content>
+    <form class="login-form" [formGroup]="form" (submit)="onLoginSubmit()">
+      <mat-form-field class="login-input">
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" id="username" type="text" />
+      </mat-form-field>
+      <mat-form-field class="login-input">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" id="password" [type]="passwordType" />
+        @if (form.get("password")?.value && form.get("password")?.value.trim() !== "" && passwordType === "password") {
+        <button mat-icon-button matSuffix aria-label="Show Password" (click)="passwordType = 'text'">
+          <mat-icon>visibility</mat-icon>
+        </button>
+        }
+        @if (form.get("password")?.value && form.get("password")?.value.trim() !== "" && passwordType !== "password") {
+        <button mat-icon-button matSuffix aria-label="Hide Password" (click)="passwordType = 'password'">
+          <mat-icon>visibility_off</mat-icon>
+        </button>
+        }
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <!--Card Actions-->
+  <mat-card-actions>
+    @if (!loading) {
+    <button class="action-padding login-input" mat-raised-button type="submit" color="primary"
+      [disabled]="!form.valid || loading" (click)="onLoginSubmit()">
+
+      Sign In
+    </button>
+    }
+    @if (loading) {
+    <div class="action-padding signing-in-container">
+      <mat-progress-spinner diameter="32" color="acceny" mode="indeterminate"></mat-progress-spinner>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h3 class="signing-in-text">Signing In</h3>
+    </div>
+    }
+  </mat-card-actions>
+  <!--Card Footer-->
+  <mat-card-footer>
+    This projects is a work in progress, 100% functionality and coolness is not currently something I can promise.
+  </mat-card-footer>
+</mat-card>

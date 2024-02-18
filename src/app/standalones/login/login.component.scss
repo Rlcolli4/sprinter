@@ -1,0 +1,26 @@
+.login-form {
+  display: block;
+}
+
+.login-input {
+  width: 250px;
+  display: flex;
+}
+
+.action-padding {
+  margin-left: 8px; //compensates for less padding in the action buttons section
+}
+
+.signing-in-container {
+  width: 250px;
+  height: 32px;
+  display: contents;
+}
+
+.signing-in-text {
+  margin: 0;
+}
+
+// TODO: Center input, button, title, etc. in the mat card...
+
+// TODO: Create media query that sets the size of the mat card... hopefully works with above to always center items!
