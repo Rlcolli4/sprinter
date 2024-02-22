@@ -1,1 +1,14 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container class="main-view">
+  <mat-sidenav class="l--height-100 l--padded side-nav" mode="side" opened>
+    <ul class="l--nav-list">
+      @for (link of links; track link.id) {
+      <li>
+        <h3 class="nav-item" (click)="onNavItemClick(link)">{{ link.title }}</h3>
+      </li>
+      }
+    </ul>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

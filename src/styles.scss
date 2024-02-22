@@ -1,1 +1,24 @@
 @import '../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+ul {
+  list-style-type: none;
+}
+
+.l-- {
+  &width-100 {
+    width: 100%;
+  }
+
+  &height-100 {
+    height: 100%;
+  }
+
+  &padded {
+    padding: 10px
+  }
+
+  &nav-list {
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+}
