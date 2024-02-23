@@ -1,5 +1,5 @@
 <mat-sidenav-container class="main-view">
-  <mat-sidenav class="l--height-100 l--overflow-manager side-nav" mode="side" opened>
+  <mat-sidenav class="l--height-100 l--overflow-y-only side-nav" mode="side" [opened]="!isMobileSize">
     <mat-list>
       @for (link of links; track link.id) {
       <mat-list-item class="l--nav-item" (click)="router.navigateByUrl(link.route)">
@@ -12,6 +12,13 @@
     </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>
+    @if (isMobileSize) {
+    <div class="l--width-100 l--padded header">
+      <button mat-raised-button>
+        <mat-icon fontIcon="menu"></mat-icon>
+      </button>
+    </div>
+    }
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

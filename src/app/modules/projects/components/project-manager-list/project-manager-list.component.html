@@ -1,6 +1,6 @@
-<div class="l--padded l--full-view">
+<div class="l--padded l--overflow-y-only">
   <mat-list>
-    @for (project of projectInfo; track project.id; let idx = $index, first = $first, last = $last ) {
+    @for (project of projectInfo; track project.id; let last = $last ) {
     <mat-divider></mat-divider>
     <mat-list-item class="l--nav-item" (click)="onListItemClick(project.id)">
       <div class="th--bold" matListItemTitle>

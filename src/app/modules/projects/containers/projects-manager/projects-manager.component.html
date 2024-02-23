@@ -1,4 +1,4 @@
-<div class="l--width-100 l--padded">
+<div class="l--width-100 l--padded l--overflow-y-only">
   <mat-button-toggle-group class="list-type-switch" [(value)]="type" #group="matButtonToggleGroup">
     <mat-button-toggle value="CARD" aria-label="View as Cards">
       <mat-icon fontIcon="apps"></mat-icon>
@@ -8,13 +8,14 @@
     </mat-button-toggle>
   </mat-button-toggle-group>
 </div>
+<div class="l--full-view l--overflow-y-only">
+  @if (type === "CARD") {
 
-@if (type === "CARD") {
+  <app-project-manager-cards [projectInfo]="projectInfo"></app-project-manager-cards>
 
-<app-project-manager-cards [projectInfo]="projectInfo"></app-project-manager-cards>
+  } @else if (type === "LIST") {
 
-} @else if (type === "LIST") {
+  <app-project-manager-list [projectInfo]="projectInfo"></app-project-manager-list>
 
-<app-project-manager-list [projectInfo]="projectInfo"></app-project-manager-list>
-
-}
+  }
+</div>

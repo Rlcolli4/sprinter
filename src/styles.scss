@@ -30,6 +30,10 @@ body {
   font-size: map-get($fontSizes, medium);
 }
 
+mat-sidenav-content {
+  overflow: hidden !important;
+}
+
 ul {
   list-style-type: none;
 }
@@ -57,7 +61,7 @@ ul {
     cursor: pointer;
   }
 
-  &overflow-manager {
+  &overflow-y-only {
     overflow-x: hidden;
     overflow-y: auto;
   }
