@@ -1,12 +1,15 @@
 <mat-sidenav-container class="main-view">
-  <mat-sidenav class="l--height-100 l--padded side-nav" mode="side" opened>
-    <ul class="l--nav-list">
+  <mat-sidenav class="l--height-100 l--overflow-manager side-nav" mode="side" opened>
+    <mat-list>
       @for (link of links; track link.id) {
-      <li>
-        <h3 class="nav-item" (click)="onNavItemClick(link)">{{ link.title }}</h3>
-      </li>
+      <mat-list-item class="l--nav-item" (click)="router.navigateByUrl(link.route)">
+        <mat-icon matListItemIcon [fontIcon]="link.icon"></mat-icon>
+        <div matListItemTitle>
+          {{ link.title }}
+        </div>
+      </mat-list-item>
       }
-    </ul>
+    </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <router-outlet></router-outlet>

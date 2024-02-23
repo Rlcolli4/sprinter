@@ -1,1 +1,20 @@
-<p>projects-manager works!</p>
+<div class="l--width-100 l--padded">
+  <mat-button-toggle-group class="list-type-switch" [(value)]="type" #group="matButtonToggleGroup">
+    <mat-button-toggle value="CARD" aria-label="View as Cards">
+      <mat-icon fontIcon="apps"></mat-icon>
+    </mat-button-toggle>
+    <mat-button-toggle value="LIST" aria-label="View as List">
+      <mat-icon fontIcon="list"></mat-icon>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</div>
+
+@if (type === "CARD") {
+
+<app-project-manager-cards [projectInfo]="projectInfo"></app-project-manager-cards>
+
+} @else if (type === "LIST") {
+
+<app-project-manager-list [projectInfo]="projectInfo"></app-project-manager-list>
+
+}

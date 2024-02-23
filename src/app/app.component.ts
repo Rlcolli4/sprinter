@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LinkInfo } from './models/navigation/link-info.model';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +9,12 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   // TODO: Add Icons for the route
-  links: { id: number, title: string, route: string }[] = [
-    { id: 1, title: "Home", route: "home" },
-    { id: 2, title: "Teams", route: "teams" },
-    { id: 3, title: "Projects", route: "projects" },
+  links: LinkInfo[] = [
+    { id: 1, title: "Home", route: "home", icon: "home" },
+    { id: 2, title: "Teams", route: "teams", icon: "people" },
+    { id: 3, title: "Projects", route: "projects", icon: "work" },
   ];
 
-  constructor(private router: Router) { }
+  constructor(public router: Router) { }
 
-  onNavItemClick(link: { id: number, title: string, route: string }): void {
-    console.log(link);
-    this.router.navigateByUrl(link.route);
-  }
 }

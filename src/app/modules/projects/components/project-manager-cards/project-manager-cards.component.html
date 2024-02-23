@@ -1,0 +1,7 @@
+<div class="l--padded l--full-view l--flex-layout">
+  @for (project of projectInfo; track project.id) {
+  <div class="l--padded info-card-container">
+    <app-info-card [info]="project"></app-info-card>
+  </div>
+  }
+</div>

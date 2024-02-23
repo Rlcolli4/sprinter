@@ -1,0 +1,19 @@
+<div class="l--padded l--full-view">
+  <mat-list>
+    @for (project of projectInfo; track project.id; let idx = $index, first = $first, last = $last ) {
+    <mat-divider></mat-divider>
+    <mat-list-item class="l--nav-item" (click)="onListItemClick(project.id)">
+      <div class="th--bold" matListItemTitle>
+        {{ project.title }}
+      </div>
+      <div class="th--italics" matListItemLine>
+        {{ project.subtitle }}
+      </div>
+    </mat-list-item>
+    @if(last) {
+    <mat-divider></mat-divider>
+    }
+    }
+  </mat-list>
+
+</div>
