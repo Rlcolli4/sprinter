@@ -8,10 +8,11 @@ describe('TeamsManagerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TeamsManagerComponent]
+      declarations: [TeamsManagerComponent],
+      imports: []
     })
-    .compileComponents();
-    
+      .compileComponents();
+
     fixture = TestBed.createComponent(TeamsManagerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

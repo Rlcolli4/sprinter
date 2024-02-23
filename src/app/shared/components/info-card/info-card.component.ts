@@ -14,6 +14,8 @@ export class InfoCardComponent {
   constructor(private router: Router) { }
 
   onCardClick(): void {
-    this.router.navigateByUrl("projects/" + this.info?.id.toString());
+    if (this.info) {
+      this.router.navigateByUrl("projects/" + this.info?.id.toString());
+    }
   }
 }
