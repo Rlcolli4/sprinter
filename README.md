@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
 
+Currently project runs with [Angular CLI](https://github.com/angular/angular-cli) version 17.x.x.
+
 **This projects is a work in progress, 100% functionality and coolness is not currently something I can promise.
 
 ## Development server
